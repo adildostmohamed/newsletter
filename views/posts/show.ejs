@@ -1,0 +1,52 @@
+<% include ../partials/head %>
+<header class="post-header" data-post-id="<%= post._id%>">
+  <div class="post-header__main-wrapper">
+    <div class="container">
+      <h1 class="post-header__title"><span class="highlight">Customer and <br />Customer Technologies<br /> Newsletter</span></h1>
+    </div>
+  </div>
+  <div class="post-header__date-wrapper">
+    <div class="container">
+      <h2 class="post-header__date"><%= post.title %></h2>
+    </div>
+  </div>
+</header>
+<div class="post">
+  <div class="row">
+    <article class="post__body editor-output">
+      <%- post.body %>
+    </article>
+  </div>
+</div>
+<section id="comments" class="comments">
+  <div class="comments-wrapper">
+    <div class="comments__main">
+      <h3 class="comments__title">Comments</h3>
+      <% if(post.comments.length > 0) { %>
+        <% var reversedComments = post.comments.reverse(); %>
+        <ul class="comments__list">
+          <% reversedComments.forEach(function(comment){ %>
+          <li>
+            <article class="comment-card">
+              <p class="comment-card__author"><%- comment.author %></p>
+              <p class="comment-card__date"><%= moment(Date(comment.date)).format("MMM Do YY") %></p>
+              <p class="comment-card__body"><%- comment.body %></p>
+            </article>
+          </li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <p>No comments yet, be the first to add one</p>
+      <% } %>
+    </div>
+    <section>
+    <% include ../comments/new %>
+    </section>
+  </div>
+</section>
+<!--<a class="post__edit-button" href="/posts/<%= post.id %>/edit" title="Edit this post">Edit post</a>
+<form action="/posts/<%= post.id %>?_method=DELETE" method="post">
+  <button>Delete post</button>
+</form>-->
+
+<% include ../partials/foot %>

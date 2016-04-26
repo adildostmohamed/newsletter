@@ -1,0 +1,10 @@
+<form id="comment-form" action="/posts/<%= post._id %>/comments" method="POST">
+  <fieldset class="comment-form">
+    <legend class="hidden">Add a comment</legend>
+    <label for="comment-author" class="label-float label-float-js">Name</label>
+    <input id='comment-author'  class="input-float" name='comment[author]' type='text' />
+    <label for="comment-body" class="label-float label-float-js">Your comment</label>
+    <textarea id='comment-body' class="input-float" name='comment[body]'></textarea>
+    <button type="submit" class="btn-primary">Add comment</button>
+  </fieldset>
+</form>

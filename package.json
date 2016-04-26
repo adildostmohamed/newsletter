@@ -1,0 +1,28 @@
+{
+  "name": "newsletter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adil Dostmohamed",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "bootstrap-sass": "^3.3.6",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0",
+    "jquery": "^2.2.2",
+    "method-override": "^2.3.5",
+    "moment": "^2.13.0",
+    "mongoose": "^4.4.10"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.12.3",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0"
+  }
+}

@@ -1,0 +1,52 @@
+.comment-form {
+  @extend %form;
+  @extend %content-centered--skinny;
+  input {
+    height: 60px;
+    padding-top: 12px;
+  }
+  .input-float {
+    border: none;
+    color: $color-dark;
+    background-color: $color-white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    &:focus {
+      outline: 2px solid $color-accent;
+    }
+  }
+  textarea {
+    border: none;
+    color: $color-dark;
+    background-color: $color-white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    height: 80px;
+    padding-top: 24px;
+    &:focus {
+      outline: 2px solid $color-accent;
+    }
+  }
+  label {
+    background-color: transparent;
+    padding: 0;
+    color: $color-accent;
+  }
+  .label-float {
+    position: relative;
+    left: 15px;
+    margin-bottom: 0;
+    line-height: 15px;
+    top: ((60px/2) + 15px - (15px/2));
+    transition-property: top, font-size;
+    transition-duration: 0.25s;
+  }
+  .label-float--active {
+    @extend %text--tiny;
+    position: relative;
+    left: 15px;
+    margin-bottom: 0;
+    line-height: 15px;
+    top: (12px + 8px);
+    transition-property: top, font-size;
+    transition-duration: 0.25s;
+  }
+}

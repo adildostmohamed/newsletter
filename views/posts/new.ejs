@@ -1,0 +1,14 @@
+<% include ../partials/head %>
+  <section class="container">
+    <form action="/posts" method="POST">
+      <fieldset class="post-form">
+        <legend class="hidden">Create newsletter post</legend>
+        <label for="post-title">Issue date</label>
+        <input id='post-title' name='post[title]' type='text' placeholder='Enter the issue date for the post'/>
+        <label for="post-body">Post body</label>
+        <textarea id='post-body' name='post[body]' placeholder='Get your Shakespeare on'></textarea>
+        <button class="btn-primary">Create post</button>
+      </fieldset>
+    </form>
+  </section>
+<% include ../partials/foot %>

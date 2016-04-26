@@ -1,0 +1,28 @@
+<% include ../partials/head %>
+<h2>All posts</h2>
+<a href="/posts/new">Create new post</a>
+<div class="container-fluid">
+  <div class="row">
+    <div class="featured-section">
+      <div class="featured-post-details">
+        <h3 class="featured-post__title"><%= mainPost.title %></h3>
+        <div class="featured-post__body"><%- mainPost.body %></div>
+        <a class="featured-post__link" href="/posts/<%= mainPost._id %>" />See more</a>
+      </div>
+    </div>
+    <div class="list-section">
+      <div class="list-item">
+        <% posts.forEach(function(post){ %>
+            <h3 class="list-item__title"><%= post.title %></h3>
+            <div class="list-item__body"><%- post.body %></div>
+            <a class="list-item__link" href="/posts/<%= post._id %>" />See more</a>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+</div>
+
+<% include ../partials/foot %>

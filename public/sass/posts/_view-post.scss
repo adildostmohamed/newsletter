@@ -1,0 +1,56 @@
+.post {
+  @extend .container;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.post__body {
+  @extend %content-centered;
+}
+
+.editor-output {
+  p {
+    @extend %text;
+    color: $color-dark;
+    margin-bottom: 12px;
+  }
+}
+
+p {
+  @extend %text;
+  color: $color-dark;
+  margin-bottom: 12px;
+}
+
+.editor-output__subheader {
+  @extend %sub-header;
+  background-color: $color-dark;
+  color: white;
+}
+
+//utilisation and pipeline section
+
+.pipeline__figure {
+  @extend %one-third--xs;
+  text-align: center;
+}
+
+p.pipeline__percent {
+  font-size: 5.0rem;
+  font-weight: 700;
+  @media(min-width: 992px) {
+    font-size: 7.0rem;
+  }
+}
+
+.pipeline__percent--small {
+  font-size: 2.1rem;
+  font-weight: 700;
+  @media(min-width: 992px) {
+    font-size: 2.6rem;
+  }
+}
+
+.pipeline__text {
+  @extend %two-thirds--xs;
+}
