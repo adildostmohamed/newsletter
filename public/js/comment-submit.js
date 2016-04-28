@@ -46,8 +46,6 @@ $(document).ready(function() {
             }, 500);
             clearInput('#comment-author');
             clearInput('#comment-body');
-            // $('#comment-author').val('').prev('.label-float-js').removeClass('label-float--active');
-            // $('#comment-body').val('').prev('.label-float-js').removeClass('label-float--active');
           }
         });
       // stop the form from submitting the normal way and refreshing the page
