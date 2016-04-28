@@ -17,6 +17,12 @@ gulp.task('sass', function(){
     .pipe(bs.reload({stream:true}));
 });
 
+gulp.task('prod', function(){
+  return (gulp.src('public/sass/main.scss'))
+    .pipe(sass())
+    .pipe(gulp.dest('public/css'));
+});
+
 gulp.task('watch',['browser-sync'], function(){
   gulp.watch('public/sass/**/*.scss', ['sass']);
   gulp.watch('views/*.ejs').on('change', bs.reload);
