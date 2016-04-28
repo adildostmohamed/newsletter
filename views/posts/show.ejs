@@ -22,9 +22,9 @@
   <div class="comments-wrapper">
     <div class="comments__main">
       <h3 class="comments__title">Comments</h3>
+      <ul class="comments__list">
       <% if(post.comments.length > 0) { %>
         <% var reversedComments = post.comments.reverse(); %>
-        <ul class="comments__list">
           <% reversedComments.forEach(function(comment){ %>
           <li>
             <article class="comment-card">
@@ -36,7 +36,7 @@
           <% }) %>
         </ul>
       <% } else { %>
-        <p>No comments yet, be the first to add one</p>
+        <p class="comments__none-prompt">No comments yet, be the first to add one</p>
       <% } %>
     </div>
     <section>

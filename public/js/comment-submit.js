@@ -2,7 +2,12 @@ $(document).ready(function() {
   var postId = $('header').data('post-id');
 
   var createPost = function(comment) {
+    $('.comments__none-prompt').remove();
     $('<li><article class="comment-card"><p class="comment-card__author">' + comment.author + '</p><p class="comment-card__date">A moment ago</p><p class="comment-card__body">' + comment.body + '</p></article></li>').prependTo('.comments__list');
+  };
+
+  var clearInput = function(target) {
+    $(target).val('').prev('.label-float-js').removeClass('label-float--active');
   };
   // process the form
   $('#comment-form').submit(function(event) {
@@ -13,8 +18,6 @@ $(document).ready(function() {
           'author'           : $('#comment-author').val(),
           'body'             : $('#comment-body').val()
       };
-
-      console.log(commentData);
 
       // process the form
       $.ajax({
@@ -37,14 +40,14 @@ $(document).ready(function() {
            * A function to be called if the request succeeds.
            */
           success: function(data, textStatus, jqXHR) {
-            console.log(data);
-            console.log(data.body);
             createPost(data);
             $('html, body').animate({
               scrollTop: $("#comments").offset().top
             }, 500);
-            $('#comment-author').val('').prev('.label-float-js').removeClass('label-float--active');
-            $('#comment-body').val('').prev('.label-float-js').removeClass('label-float--active');
+            clearInput('#comment-author');
+            clearInput('#comment-body');
+            // $('#comment-author').val('').prev('.label-float-js').removeClass('label-float--active');
+            // $('#comment-body').val('').prev('.label-float-js').removeClass('label-float--active');
           }
         });
       // stop the form from submitting the normal way and refreshing the page
