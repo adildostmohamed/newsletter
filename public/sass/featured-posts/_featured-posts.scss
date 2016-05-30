@@ -75,16 +75,21 @@
   }
 }
 
+.list-section__title {
+  @extend .comments__title;
+  margin-top: 0;
+}
+
 .list-item {
   position: relative;
   transition: all 0.3s;
   @extend .comment-card;
-  padding: 30px 15px !important;
+  padding: 24px 15px !important;
 }
 
 .list-item__title {
   margin-top: 0;
-  margin-bottom: 18px !important;
+  margin-bottom: 24px !important;
   color: $color-accent;
   @extend .comment-card__author;
   @extend %text;

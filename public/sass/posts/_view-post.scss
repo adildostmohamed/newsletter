@@ -78,6 +78,7 @@ p.pipeline__percent {
 .mce-content-body  {
   figcaption {
     @extend %text--small;
+    text-align: left !important;
     padding: 8px;
     font-weight: 500;
     background-color: $color-light;
