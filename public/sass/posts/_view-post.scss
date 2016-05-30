@@ -54,3 +54,34 @@ p.pipeline__percent {
 .pipeline__text {
   @extend %two-thirds--xs;
 }
+
+//image styles for upload images
+
+.post {
+  figcaption {
+    @extend %text--small;
+    padding: 8px;
+    font-weight: 500;
+    background-color: $color-light;
+    color: $color-dark;
+    font-style: italic;
+    position: relative;
+    top: -30px;
+  }
+
+  .editor-output__image {
+    @extend .img-responsive;
+    margin: 30px 0;
+  }
+}
+
+.mce-content-body  {
+  figcaption {
+    @extend %text--small;
+    padding: 8px;
+    font-weight: 500;
+    background-color: $color-light;
+    color: $color-dark;
+    font-style: italic;
+  }
+}
