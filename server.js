@@ -19,11 +19,11 @@ app.use(methodOverride("_method"));
 app.locals.moment = require('moment');
 
 //DB SETUP
+var dburl = process.env.DATABASEURL || 'mongodb://localhost/newsletter_app';
 //Set up Mongoose
-mongoose.connect('mongodb://localhost/newsletter_app');
+mongoose.connect(dburl);
 
 //SET UP ROUTES
-
 //HOME
 app.get("/", function(req, res) {
   res.render("home");
