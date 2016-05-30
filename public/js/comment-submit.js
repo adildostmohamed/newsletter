@@ -15,17 +15,17 @@ $(document).ready(function() {
       // get the form data
       // there are many ways to get this data using jQuery (you can use the class or id also)
       var commentData = {
-          'author'           : $('#comment-author').val(),
-          'body'             : $('#comment-body').val()
+          'author': $('#comment-author').val(),
+          'body': $('#comment-body').val()
       };
 
       // process the form
       $.ajax({
-          type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-          url         : '/posts/' + postId + '/comments', // the url where we want to POST
-          data        : commentData, // our data object
-          dataType    : 'json', // what type of data do we expect back from the server
-          encode      : true,
+          type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+          url: '/posts/' + postId + '/comments', // the url where we want to POST
+          data: commentData, // our data object
+          dataType: 'json', // what type of data do we expect back from the server
+          encode: true,
 
       error: function(jqXHR, textStatus, errorThrown) {
               console.log('jqXHR:');
