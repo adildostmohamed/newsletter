@@ -13,6 +13,7 @@
   "dependencies": {
     "body-parser": "^1.15.0",
     "bootstrap-sass": "^3.3.6",
+    "browser-sync": "^2.12.10",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
     "gulp": "^3.9.1",

@@ -3,7 +3,7 @@ $(document).ready(function() {
 
   var createPost = function(comment) {
     $('.comments__none-prompt').remove();
-    $('<li><article class="comment-card"><p class="comment-card__author">' + comment.author + '</p><p class="comment-card__date">A moment ago</p><p class="comment-card__body">' + comment.body + '</p></article></li>').prependTo('.comments__list');
+    $('<li><article class="comment-card"><p class="comment-card__author">' + comment.author + '</p><p class="comment-card__date">A moment ago</p><p class="comment-card__body">' + comment.body + '</p></article></li>').appendTo('.comments__list');
   };
 
   var clearInput = function(target) {

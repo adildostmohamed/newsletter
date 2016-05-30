@@ -27,6 +27,8 @@
   list-style-type: none;
   margin-bottom: 18px;
   padding-bottom: 8px;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 
@@ -42,6 +44,7 @@
 
 .comment-card__author {
   margin-bottom: 0;
+  margin-top: 0;
   text-transform: uppercase;
   font-weight: 700;
 }

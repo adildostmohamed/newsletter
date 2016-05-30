@@ -1,27 +1,24 @@
 <% include ../partials/head %>
-<h2>All posts</h2>
-<a href="/posts/new">Create new post</a>
+<%# <a href="/posts/new">Create new post</a>%>
 <div class="container-fluid">
   <div class="row">
     <div class="featured-section">
       <div class="featured-post-details">
-        <h3 class="featured-post__title"><%= mainPost.title %></h3>
-        <div class="featured-post__body"><%- mainPost.body %></div>
-        <a class="featured-post__link" href="/posts/<%= mainPost._id %>" />See more</a>
+        <h2 class="featured-post__title"><%= mainPost.title %></h2>
+        <div class="featured-post__body"><%- mainPost.body.substring(0, 500) %>...</div>
+        <a class="featured-post__link" href="/posts/<%= mainPost._id %>" />Read more</a>
       </div>
     </div>
     <div class="list-section">
-      <div class="list-item">
-        <% posts.forEach(function(post){ %>
+      <% posts.forEach(function(post){ %>
+        <a class="list-item__link" href="/posts/<%= post._id %>">
+          <div class="list-item">
             <h3 class="list-item__title"><%= post.title %></h3>
-            <div class="list-item__body"><%- post.body %></div>
-            <a class="list-item__link" href="/posts/<%= post._id %>" />See more</a>
-        <% }) %>
-      </div>
+            <span class="list-item__more">Read more</span>
+          </div>
+        </a>
+      <% }) %>
     </div>
-  </div>
-
-
   </div>
 </div>
 
