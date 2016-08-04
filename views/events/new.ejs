@@ -1,0 +1,14 @@
+<% include ../partials/head %>
+  <section class="container">
+    <form action="/events" method="POST">
+      <fieldset class="event-form">
+        <legend class="hidden">Create a new event</legend>
+        <label for="event-title">Event title</label>
+        <input id='event-title' name='event[title]' type='text' placeholder='Enter the title for the event'/>
+        <label for="event-description">Event description</label>
+        <textarea id='event-description' name='event[description]' placeholder='Get your Shakespeare on'></textarea>
+        <button class="btn-primary">Create event</button>
+      </fieldset>
+    </form>
+  </section>
+<% include ../partials/foot %>

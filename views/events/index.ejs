@@ -1,0 +1,10 @@
+<% include ../partials/head %>
+
+<% events.forEach(function(event){ %>
+  <div>
+    <p><%= event.title %></p>
+    <p><%= event.description %></p>
+  </div>
+<% }) %>
+
+<% include ../partials/foot %>

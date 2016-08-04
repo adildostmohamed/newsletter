@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var Post = require('./models/post');
 var Comment = require('./models/comment');
+var Event = require('./models/event');
 
 //APP CONFIG
 //set view engine to ejs
@@ -150,6 +151,38 @@ app.post("/posts/:id/comments", function(req, res){
   });
 });
 
+
+// =========================================
+// ROUTES FOR EVENTS
+// =========================================
+
+//INDEX for all events
+app.get("/events", function(req, res){
+  Event.find({}, function(err, allEvents){
+    if(err) {
+      console.log(err);
+    } else {
+      res.render("events/index", {events: allEvents});
+    }
+  });
+});
+
+//NEW event form
+app.get("/events/new", function(req, res){
+  res.render("events/new");
+});
+
+//CREATE an event
+app.post("/events", function(req, res){
+  var event = req.body.event;
+  Event.create(event, function(err, newEvent){
+    if(err) {
+      console.log(err);
+    } else {
+      res.redirect("/events");
+    }
+  });
+});
 
 //SET PORT AND RUN SERVER
 var port = process.env.PORT || 8080;
