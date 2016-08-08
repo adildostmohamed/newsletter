@@ -1,10 +1,22 @@
 <% include ../partials/head %>
 
-<% events.forEach(function(event){ %>
-  <div>
-    <p><%= event.title %></p>
-    <p><%= event.description %></p>
-  </div>
-<% }) %>
+<div class="container">
+  <% events.forEach(function(event){ %>
+    <div>
+      <p><%= event.title %></p>
+      <p><%= event.description %></p>
+      <p><%= event.location %></p>
+      <% if(event.contact.email) { %>
+        <a href="mailto:<%= event.contact.email %>"><%= event.contact.name %></a>
+      <% } %>
+      <% if (!event.contact.email) { %>
+        <p><%= event.contact.name %></p>
+      <% } %>
+      <p><%= event._id %></p>
+      <p><%= moment(event.date.start).format("MMM Do YYYY") %> - <%= moment(event.date.start).format("h:mm a") %></p>
+      <p><%= moment(event.date.end).format("MMM Do YYYY") %> - <%= moment(event.date.end).format("h:mm a") %></p>
+    </div>
+  <% }) %>
+</div>
 
 <% include ../partials/foot %>
