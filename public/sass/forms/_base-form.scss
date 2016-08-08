@@ -21,12 +21,25 @@
     padding-left: 15px;
     margin-bottom: 12px;
   }
+  input.error {
+    border: 1px solid red;
+  }
+  p.error {
+    @extend %text--small;
+    color: red;
+    margin: -8px 0 12px 0;
+  }
   textarea {
     width: 100%;
     @extend %text;
     padding-left: 15px;
     padding-top: 10px;
-    border: none;
+    margin-bottom: 12px;
+  }
+  select {
+    width: 100%;
+    margin-bottom: 12px;
+    @extend %text;
   }
 }
 

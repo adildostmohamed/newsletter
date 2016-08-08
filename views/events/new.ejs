@@ -1,12 +1,29 @@
 <% include ../partials/head %>
   <section class="container">
-    <form action="/events" method="POST">
+    <div class="error">
+      <span></span>
+    </div>
+    <form id="event-new" action="/events" method="POST">
       <fieldset class="event-form">
         <legend class="hidden">Create a new event</legend>
         <label for="event-title">Event title</label>
         <input id='event-title' name='event[title]' type='text' placeholder='Enter the title for the event'/>
+        <label for="event-location">Event location</label>
+        <input id="event-location" name="event[location]" type="text" placeholder="Enter the location or webex details" />
+        <label for="event-contact-name">Contact name</label>
+        <input id="event-contact-name" name="event[contact][name]" type="text" placeholder="Enter contact name for the event" />
+        <label for="event-contact-email">Contact email</label>
+        <input id="event-contact-email" name="event[contact][email]" type="email" placeholder="Enter email address for event contact" />
+        <label for="event-start">Event start</label>
+        <div class='input-group date'>
+          <input id ="event-start" name="event[date][start]" type='text' placeholder="Event start"/>
+        </div>
+        <label for="event-end">Event end</label>
+        <div class='input-group date'>
+          <input id ="event-end" name="event[date][end]" type='text' placeholder="Event end"/>
+        </div>
         <label for="event-description">Event description</label>
-        <textarea id='event-description' name='event[description]' placeholder='Get your Shakespeare on'></textarea>
+        <textarea id='event-description' name='event[description]' placeholder="What's the event about?"></textarea>
         <button class="btn-primary">Create event</button>
       </fieldset>
     </form>
