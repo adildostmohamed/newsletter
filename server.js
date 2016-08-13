@@ -184,7 +184,6 @@ app.get("/events", function(req, res){
     if(err) {
       console.log(err);
     } else {
-      console.log(allEvents);
       res.render("events/index", {events: allEvents});
     }
   });
