@@ -1,16 +1,18 @@
 <% include ../partials/head %>
   <section class="container">
-    <form action="/posts" method="POST">
+    <% include ../partials/error-block %>
+    <form id="post-form" action="/posts" method="POST">
       <fieldset class="post-form">
         <legend class="hidden">Create newsletter post</legend>
         <label for="post-title">Issue date</label>
         <input id='post-title' name='post[title]' type='text' placeholder='Enter the issue date for the post'/>
         <label for="post-state">Post state</label>
-        <select id="post-state" name="post[state]">
+        <select id="post-state" aria-describedby="state-help" name="post[state]">
           <% stateOptions.forEach(function(stateOption){ %>
             <option value="<%= stateOption.value %>" <%= (stateOption.value === "") ? "disabled" : "" %>><%= stateOption.option %></option>
           <% }) %>
         </select>
+        <p id="state-help" class="form-help">This post wont be displayed until it is marked as published</p>
         <label for="post-body">Post body</label>
         <textarea id='post-body' name='post[body]' placeholder='Get your Shakespeare on'></textarea>
         <button class="btn-primary">Create post</button>

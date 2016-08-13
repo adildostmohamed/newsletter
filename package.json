@@ -22,7 +22,13 @@
     "express": "^4.13.4",
     "express-session": "^1.14.0",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-order": "^1.1.1",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0",
     "jquery": "^2.2.2",
     "jquery-validation": "^1.15.1",
     "method-override": "^2.3.5",
@@ -34,7 +40,13 @@
   "devDependencies": {
     "browser-sync": "^2.12.3",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-order": "^1.1.1",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0",
     "morgan": "^1.7.0"
   },
   "engines": {
