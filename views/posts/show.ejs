@@ -2,12 +2,14 @@
 <header class="post-header" data-post-id="<%= post._id%>">
   <div class="post-header__main-wrapper">
     <div class="container">
-      <h1 class="post-header__title"><span class="highlight">Customer and <br />Customer Technologies<br /> Newsletter</span></h1>
-    </div>
-  </div>
-  <div class="post-header__date-wrapper">
-    <div class="container">
-      <h2 class="post-header__date"><%= post.title %></h2>
+      <div class="row">
+        <div class="col-sm-6">
+          <h1 class="post-header__title">Customer and <br />Customer Technologies<br /> Newsletter</h1>
+        </div>
+        <div class="col-sm-6">
+          <h2 class="post-header__date">ISSUE <br /><%= post.title %></h2>
+        </div>
+      </div>
     </div>
   </div>
 </header>

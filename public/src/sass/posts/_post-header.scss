@@ -1,15 +1,18 @@
 .post-header {
-  // padding: 12px 0 24px 0;
+  background: linear-gradient(90deg, $color-brand-orange,$color-brand-tangerine,$color-brand-deep-red);
+  height: 60vh;
+  opacity: 1;
+  transition: all 0.1s;
 }
 
 .post-header__main-wrapper {
-  background-color: $color-dark;
+  position: fixed;
   width: 100%;
   padding-top: 12px;
 }
 
 .post-header__date-wrapper {
-  background-color: $color-dark;
+  position: fixed;
   width: 100%;
   padding-bottom: 12px;
   transition: all 0.2s ease-in-out;
@@ -30,7 +33,11 @@
 
 .post-header__title {
   @extend %featured-heading;
+  color: $color-white;
   margin: 0;
+  position: relative;
+  top: 100px;
+  opacity: 1;
 }
 
 .post-header__date {
@@ -39,7 +46,11 @@
   @extend %sub-heading;
   font-weight: 400;
   text-transform: uppercase;
-  transition: all 0.2s ease-in-out;
+  border: 2px solid $color-white;
+  padding: 24px;
+  display: inline-block;
+  position: relative;
+  // transition: all 0.2s ease-in-out;
   @media (min-width: 992px) {
     margin: 15px 0 0 0;
   }
