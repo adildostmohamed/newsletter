@@ -1,13 +1,12 @@
 <% include ../partials/head %>
 <header class="post-header" data-post-id="<%= post._id%>">
+  <div class="post-header__fade-wrapper"></div>
   <div class="post-header__main-wrapper">
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
-          <h1 class="post-header__title">Customer and <br />Customer Technologies<br /> Newsletter</h1>
-        </div>
-        <div class="col-sm-6">
-          <h2 class="post-header__date">ISSUE <br /><%= post.title %></h2>
+          <img class="post-header__image" src="/dist/images/pwc-flag.png" alt="pwc logo"/>
+          <h1 class="post-header__title">ISSUE <br /><%= post.title %></h1>
         </div>
       </div>
     </div>

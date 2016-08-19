@@ -1,5 +1,5 @@
 body {
-  font-family: "raleway", sans-serif;
+  font-family: 'Hind Guntur', sans-serif;
   font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,7 +15,7 @@ body {
 %featured-heading {
   font-size: 3.2rem;
   line-height: 1.2;
-  font-weight: 700;
+  font-weight: 500;
   @media(min-width: 992px){
     font-size: 4.4rem;
     line-height: 1;
@@ -24,7 +24,7 @@ body {
 
 %sub-heading {
   font-size: 2.1rem;
-  font-weight: 700;
+  font-weight: 500;
   @media(min-width: 992px){
     font-size: 2.6rem;
   }
@@ -62,11 +62,10 @@ body {
 }
 
 %sub-header {
-  @extend %text--large;
-  display: inline-block;
+  @extend %sub-heading;
   text-transform: uppercase;
   margin: 12px 0 18px 0;
-  padding: 6px 8px;
+  padding: 6px 0;
   &:hover,
   &:focus {
     text-decoration: none;

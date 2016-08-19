@@ -24,8 +24,8 @@ p {
 
 .editor-output__subheader {
   @extend %sub-header;
-  background-color: $color-dark;
-  color: white;
+  color: $color-black;
+  text-align: center;
 }
 
 //utilisation and pipeline section

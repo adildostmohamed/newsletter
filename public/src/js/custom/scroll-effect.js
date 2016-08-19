@@ -27,6 +27,10 @@ var changeStyle = (function($){
   };
 })(jQuery);
 
-changeStyle.isScrolling(".post-header", ".post-header", "opacity", 1, 0.5, "");
-changeStyle.isScrolling(".post-header", ".post-header__title", "opacity", 1, 0.2, "");
-changeStyle.isScrolling(".post-header", ".post-header__title", "top", 100, 50, "px");
+changeStyle.isScrolling(".post-header", ".post-header", "opacity", 1, 1, "");
+changeStyle.isScrolling(".post-header", ".post-header__title", "opacity", 1, 0, "");
+changeStyle.isScrolling(".post-header", ".post-header__title", "top", 150, 25, "px");
+changeStyle.isScrolling(".post-header", ".post-header__fade-wrapper", "opacity", 0, 0.8, "");
+changeStyle.isScrolling(".post-header", ".navigation__fade-wrapper", "opacity", 0, 1, "");
+changeStyle.isScrolling(".post-header", ".post-header__image", "width", 40, 5, "%");
+changeStyle.isScrolling(".post-header", ".post-header__image", "opacity", 0.2, 0, "");
