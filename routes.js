@@ -21,7 +21,7 @@ module.exports = function(app, passport) {
 
   //INDEX
   app.get("/posts", function(req, res) {
-    Post.find().where('state').equals('published').exec(function(err, allPosts) {
+    Post.find().where('content.state').equals('published').exec(function(err, allPosts) {
       if(err) {
         console.log(err);
       } else {
@@ -31,7 +31,7 @@ module.exports = function(app, passport) {
         var previousPosts = reversedPosts.slice(1);
         //create a variable for the current post to use as the banner post
         var mainPost = allPosts[0];
-        res.render("posts/index", {mainPost: mainPost, posts: previousPosts})
+        res.render("posts/index", {mainPost: mainPost, posts: previousPosts});
       }
     });
   });
@@ -44,7 +44,24 @@ module.exports = function(app, passport) {
 
   //CREATE
   app.post("/posts", function(req, res) {
-    var post = req.body.post;
+
+    //randomly generate the template number to use by passing in the lowest and highest number of templates
+    function generateTemplate(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    //randomly select a template for this particular post that's being saved
+    var postTemplate = generateTemplate(1, 8);
+
+    //get the content of the post fromt the body of the request which is nested inside the post
+    var postContent = req.body.post.content;
+
+    //construct a post object by setting the content and the template so that you can use it when you call Model.create in mongoose
+    var post = {content: postContent, template: postTemplate};
+
+    //create a post using mongoose and if successful redirect to the newly created post
     Post.create(post, function(err, newPost) {
       if(err) {
         console.log(err);
@@ -90,8 +107,8 @@ module.exports = function(app, passport) {
   //UPDATE
   app.put("/posts/:id", function(req, res) {
     var id = req.params.id;
-    var updatedPost = req.body.post;
-    Post.findByIdAndUpdate(id, updatedPost, function(err, updatedPost) {
+    var updatedPostContent = req.body.post.content;
+    Post.findByIdAndUpdate(id, {$set: { content: updatedPostContent }}, function(err, updatedPost) {
       if(err) {
         console.log(err);
       } else {
@@ -222,7 +239,7 @@ module.exports = function(app, passport) {
 
   //Handle the login form
   app.post('/login', passport.authenticate('local-login', {
-    successRedirect : '/', // redirect to the homepage
+    successRedirect : '/admin/posts', // redirect to the homepage
     failureRedirect : '/login', // redirect back to the login page if there is an error
     failureFlash : true // allow flash messages
   }));
@@ -235,7 +252,7 @@ module.exports = function(app, passport) {
 
   // Handle the registration form
   app.post('/register', passport.authenticate('local-signup', {
-    successRedirect : '/', // redirect to the homepage section
+    successRedirect : '/admin/posts', // redirect to the homepage section
     failureRedirect : '/register', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
   }));

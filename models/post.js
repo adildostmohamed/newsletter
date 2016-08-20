@@ -2,10 +2,12 @@ var mongoose = require('mongoose');
 
 //Create post schema
 var postSchema = new mongoose.Schema({
-  title: String,
-  image: String,
-  body: String,
-  state: String,
+  content: {
+    title: String,
+    body: String,
+    state: String
+  },
+  template: { type: Number, default: 3 },
   createdAt: { type: Date, default: Date.now },
   comments: [
     {
