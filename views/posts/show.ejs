@@ -1,12 +1,12 @@
 <% include ../partials/head %>
-<header class="post-header" data-post-id="<%= post._id%>">
+<header id="js-post-header" class="post-header--<%= post.template %>" data-post-id="<%= post._id%>">
   <div class="post-header__fade-wrapper"></div>
   <div class="post-header__main-wrapper">
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
           <img class="post-header__image" src="/dist/images/pwc-flag.png" alt="pwc logo"/>
-          <h1 class="post-header__title">ISSUE <br /><%= post.title %></h1>
+          <h1 class="post-header__title">ISSUE <br /><%= post.content.title %></h1>
         </div>
       </div>
     </div>
@@ -15,7 +15,7 @@
 <div class="post">
   <div class="row">
     <article class="post__body editor-output">
-      <%- post.body %>
+      <%- post.content.body %>
     </article>
   </div>
 </div>
@@ -44,9 +44,5 @@
     </section>
   </div>
 </section>
-<!--<a class="post__edit-button" href="/posts/<%= post.id %>/edit" title="Edit this post">Edit post</a>
-<form action="/posts/<%= post.id %>?_method=DELETE" method="post">
-  <button>Delete post</button>
-</form>-->
 
 <% include ../partials/foot %>

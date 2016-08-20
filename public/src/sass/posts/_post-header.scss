@@ -1,8 +1,47 @@
-.post-header {
-  background: linear-gradient(60deg, $color-brand-yellow,$color-brand-orange, $color-brand-tangerine);
+%post-header {
   height: 60vh;
   opacity: 1;
   transition: all 0.1s;
+}
+
+.post-header--1 {
+  @extend %post-header;
+  background: linear-gradient(60deg, $color-brand-yellow, $color-brand-orange, $color-brand-tangerine);
+}
+
+.post-header--2 {
+  @extend %post-header;
+  background: linear-gradient(60deg, $color-brand-pink,$color-brand-deep-red);
+}
+
+.post-header--3 {
+  @extend %post-header;
+  background: linear-gradient(60deg, $color-brand-orange, $color-brand-pink);
+}
+
+.post-header--4 {
+  @extend %post-header;
+  background: linear-gradient(60deg, $color-brand-yellow, $color-white);
+}
+
+.post-header--5 {
+  @extend %post-header;
+  background: linear-gradient(60deg, $color-brand-pink, $color-brand-tangerine);
+}
+
+.post-header--6 {
+  @extend %post-header;
+  background: linear-gradient(60deg, $color-brand-yellow, $color-brand-orange, $color-brand-tangerine, $color-brand-red, $color-brand-deep-red, $color-brand-brown);
+}
+
+.post-header--7 {
+  @extend %post-header;
+  background: linear-gradient(60deg, $color-brand-orange, $color-brand-yellow);
+}
+
+.post-header--8 {
+  @extend %post-header;
+  background: linear-gradient(60deg, $color-brand-tangerine, $color-brand-orange);
 }
 
 .post-header__main-wrapper {

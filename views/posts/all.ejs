@@ -5,8 +5,8 @@
     <% posts.forEach(function(post){ %>
       <a class="list-item__link" href="/posts/<%= post._id %>/edit">
         <div class="list-item">
-          <h2 class="list-item__title"><%= post.title %></h2>
-          <p class="list-item__more"><strong>State: </strong><%= post.state %></p>
+          <h2 class="list-item__title"><%= post.content.title %></h2>
+          <p class="list-item__more"><strong>State: </strong><%= post.content.state %></p>
           <p class="list-item__more"><strong>Created: </strong><%= moment(post.createdAt).format("MMM Do YYYY") %></p>
         </div>
       </a>

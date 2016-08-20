@@ -5,16 +5,16 @@
       <fieldset class="post-form">
         <legend class="hidden">Edit post</legend>
         <label for="post-title">Issue date</label>
-        <input id='post-title' name='post[title]' type='text' value='<%= post.title %>' placeholder='Enter a title for the post'/>
+        <input id='post-title' name='post[content][title]' type='text' value='<%= post.content.title %>' placeholder='Enter a title for the post'/>
         <label for="post-state">Post state</label>
-        <select id="post-state" aria-describedby="state-help" name="post[state]">
+        <select id="post-state" aria-describedby="state-help" name="post[content][state]">
           <% stateOptions.forEach(function(stateOption){ %>
-            <option value="<%= stateOption.value %>" <%= (stateOption.value === post.state) ? "selected" : "" %> <%= (stateOption.value === "") ? "disabled" : "" %>><%= stateOption.option %></option>
+            <option value="<%= stateOption.value %>" <%= (stateOption.value === post.content.state) ? "selected" : "" %> <%= (stateOption.value === "") ? "disabled" : "" %>><%= stateOption.option %></option>
           <% }) %>
         </select>
         <p id="state-help" class="form-help">This post wont be displayed until it is marked as published</p>
         <label for="post-body">Post body</label>
-        <textarea id='post-body' name='post[body]' placeholder='Get your Shakespeare on'><%= post.body %></textarea>
+        <textarea id='post-body' name='post[content][body]' placeholder='Get your Shakespeare on'><%= post.content.body %></textarea>
         <button class="btn-primary">Update post</button>
       </fieldset>
     </form>
